@@ -1369,7 +1369,7 @@ runorraise(const Arg *arg) {
   Client *c;
   XClassHint hint = { NULL, NULL };
   /* Tries to find the client */
-  for (mon = monst; mon; mon = mon->next) {
+  for (mon = mons; mon; mon = mon->next) {
     for (c = mon->clients; c; c = c->next) {
       XGetClassHint(dpy, c->win, &hint);
       if (hint.res_class && strcmp(app, hint.res_class) == 0) {
